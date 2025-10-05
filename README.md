@@ -1,16 +1,28 @@
-# React + Vite
+# Password Generator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A small React app that creates random passwords with optional numbers and special characters. It uses a slider to pick the length and checkboxes to include numbers and/or special characters.
 
-Currently, two official plugins are available:
+## Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Open the app in the browser to try it: the UI is implemented in [src/App.jsx](src/App.jsx).
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Select password length with a slider.
+- Optionally include numbers and special characters.
+- Copy the generated password to clipboard with a single click.
+- Password regenerates when length or options change.
 
-## Expanding the ESLint configuration
+## How it works (implementation notes)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- The main UI and logic live in [src/App.jsx](src/App.jsx). The password generation logic is inside the component as the [`generatePassword`](src/App.jsx) callback and uses state variables such as [`length`](src/App.jsx), [`numberYes`](src/App.jsx), [`charYes`](src/App.jsx), [`password`](src/App.jsx) and the copy handler [`copyPassword`](src/App.jsx).
+- The app is bootstrapped from [src/main.jsx](src/main.jsx) which mounts the app into [index.html](index.html).
+- Styling comes from TailwindCSS.
+
+## Usage
+
+1. Install dependencies:
+
+```sh
+npm install
+```
