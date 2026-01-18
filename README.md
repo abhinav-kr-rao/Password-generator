@@ -1,5 +1,7 @@
 # Password Generator
 
+Netlify deployed link (https://tangerine-smakager-27b643.netlify.app/)
+
 A small React app that creates random passwords with optional numbers and special characters. It uses a slider to pick the length and checkboxes to include numbers and/or special characters.
 
 ## Demo
